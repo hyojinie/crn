@@ -1,0 +1,536 @@
+name: "rw_train_region_alex_EnsemMultiscAveFRT"
+
+layer {
+  name: "data"
+  type: "ImageData"
+  top: "data"
+  top: "gps_lat"
+  top: "gps_lon"
+  include {
+    phase: TRAIN
+  }
+  transform_param {
+    mirror: true
+    crop_size: 423
+    mean_value: 103.939
+    mean_value: 116.779
+    mean_value: 123.68
+
+    eigen_value: 88.289572
+    #eigen_value: 133.77208
+    eigen_value: 20.612614
+    eigen_value: 4.235397
+  
+    eigen_vector_component: -0.4335
+    eigen_vector_component: 0.8095
+    eigen_vector_component: -0.3960
+    eigen_vector_component: 0.6730
+    eigen_vector_component: -0.0014
+    eigen_vector_component: -0.7397
+    eigen_vector_component: 0.5993
+    eigen_vector_component: 0.5872
+    eigen_vector_component: 0.5441
+
+    relight_filler {
+      type: "gaussian"
+      std: 0.25
+    }
+  }
+  image_data_param {
+    source: "/playpen/hyojin/data/sf_orgres/all_sanfran_netvlad_trn_fr.txt"
+    batch_size: 200
+	new_height: 480
+    new_width: 480
+    shuffle: true
+    pair_size: 4
+    use_gps: true
+  }
+}
+
+layer {
+  name: "data"
+  type: "ImageData"
+  top: "data"
+  top: "gps_lat"
+  top: "gps_lon"
+  include {
+    phase: TEST
+  }
+  transform_param {
+    mirror: false
+    mean_value: 103.939
+    mean_value: 116.779
+    mean_value: 123.68
+  }
+  image_data_param {
+    source: "/playpen/hyojin/data/sf_orgres/val_sanfran_netvlad_trn_fr.txt"
+    batch_size: 4
+    new_height: 423
+    new_width: 423
+    shuffle: true
+    pair_size: 4
+    use_gps: true
+  }
+}
+
+layer {
+  name: "conv1_v"
+  type: "Convolution"
+  bottom: "data"
+  top: "conv1_v"
+  param {
+    lr_mult: 0
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 0
+    decay_mult: 0
+  }
+  convolution_param {
+    num_output: 96
+    pad_h: 0
+    pad_w: 0
+    kernel_h: 11
+    kernel_w: 11
+    stride_h: 4
+    stride_w: 4
+  }
+}
+layer {
+  name: "pool1_v"
+  type: "Pooling"
+  bottom: "conv1_v"
+  top: "pool1_v"
+  pooling_param {
+    pool: MAX
+    kernel_h: 3
+    kernel_w: 3
+    stride_h: 2
+    stride_w: 2
+    pad_h: 0
+    pad_w: 0
+  }
+}
+layer {
+  name: "relu1_v"
+  type: "ReLU"
+  bottom: "pool1_v"
+  top: "pool1_v"
+}
+layer {
+  name: "norm1_v"
+  type: "LRN"
+  bottom: "pool1_v"
+  top: "norm1_v"
+  lrn_param {
+    local_size: 5
+    alpha: 0.0001
+    beta: 0.75
+    k: 1
+  }
+}
+layer {
+  name: "conv2_v"
+  type: "Convolution"
+  bottom: "norm1_v"
+  top: "conv2_v"
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
+  convolution_param {
+    num_output: 256
+    group: 2
+    pad_h: 2
+    pad_w: 2
+    kernel_h: 5
+    kernel_w: 5
+    stride_h: 1
+    stride_w: 1
+  }
+}
+layer {
+  name: "pool2_v"
+  type: "Pooling"
+  bottom: "conv2_v"
+  top: "pool2_v"
+  pooling_param {
+    pool: MAX
+    kernel_h: 3
+    kernel_w: 3
+    stride_h: 2
+    stride_w: 2
+    pad_h: 0
+    pad_w: 0
+  }
+}
+layer {
+  name: "relu2_v"
+  type: "ReLU"
+  bottom: "pool2_v"
+  top: "pool2_v"
+}
+layer {
+  name: "norm2_v"
+  type: "LRN"
+  bottom: "pool2_v"
+  top: "norm2_v"
+  lrn_param {
+    local_size: 5
+    alpha: 0.0001
+    beta: 0.75
+    k: 1
+  }
+}
+layer {
+  name: "conv3_v"
+  type: "Convolution"
+  bottom: "norm2_v"
+  top: "conv3_v"
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
+  convolution_param {
+    num_output: 384
+    pad_h: 1
+    pad_w: 1
+    kernel_h: 3
+    kernel_w: 3
+    stride_h: 1
+    stride_w: 1
+  }
+}
+layer {
+  name: "relu3_v"
+  type: "ReLU"
+  bottom: "conv3_v"
+  top: "conv3_v"
+}
+layer {
+  name: "conv4_v"
+  type: "Convolution"
+  bottom: "conv3_v"
+  top: "conv4_v"
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
+  convolution_param {
+    num_output: 384
+    group: 2
+    pad_h: 1
+    pad_w: 1
+    kernel_h: 3
+    kernel_w: 3
+    stride_h: 1
+    stride_w: 1
+  }
+}
+layer {
+  name: "relu4_v"
+  type: "ReLU"
+  bottom: "conv4_v"
+  top: "conv4_v"
+}
+layer {
+  name: "conv5_v"
+  type: "Convolution"
+  bottom: "conv4_v"
+  top: "conv5_v"
+  param {
+    lr_mult: 1
+    decay_mult: 1
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
+  convolution_param {
+    num_output: 256
+    group: 2
+    pad_h: 1
+    pad_w: 1
+    kernel_h: 3
+    kernel_w: 3
+    stride_h: 1
+    stride_w: 1
+  }
+}
+layer {
+  name: "vlad_preL2"
+  type: "LRN"
+  bottom: "conv5_v"
+  top: "vlad_preL2"
+  lrn_param {
+    local_size: 513
+    alpha: 513
+    beta: 0.5
+    norm_region: ACROSS_CHANNELS
+    k: 0
+  }
+}
+layer {
+  name: "vlad_conv"
+  type: "Convolution"
+  bottom: "vlad_preL2"
+  top: "vlad_conv"
+  param {
+    lr_mult: 1
+  }
+  convolution_param {
+    num_output: 64
+    bias_term: false
+    kernel_h: 1
+    kernel_w: 1
+  }
+}
+layer {
+  name: "vlad_softmax"
+  type: "Softmax"
+  bottom: "vlad_conv"
+  top: "vlad_softmax"
+}
+
+layer {
+  name: "rw_conv6/pool"
+  type: "Pooling"
+  bottom: "conv5_v"
+  top: "rw_conv6/pool"
+  pooling_param {
+    pool: AVE
+    kernel_h: 3
+    kernel_w: 3
+    stride_h: 2
+    stride_w: 2
+    pad_h: 0
+    pad_w: 0
+  }
+}
+
+layer {
+  name: "rw_conv6/single"
+  type: "Convolution"
+  bottom: "rw_conv6/pool"
+  top: "rw_conv6/single"
+  param {
+    lr_mult: 10
+  }
+  param {
+    lr_mult: 20
+	decay_mult: 0
+  }
+  convolution_param {
+    num_output: 32 #25
+    pad: 2 # 1 for 3x3, 2 for 5x5
+    kernel_size: 5
+    stride: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+      value: 0
+    }
+  }
+}
+layer {
+  name: "rw_relu6/single"
+  type: "ReLU"
+  bottom: "rw_conv6/single"
+  top: "rw_conv6/single"
+}
+#### another scale
+layer {
+  name: "rw_conv6/single_2"
+  type: "Convolution"
+  bottom: "rw_conv6/pool"
+  top: "rw_conv6/single_2"
+  param {
+    lr_mult: 10
+  }
+  param {
+    lr_mult: 20
+	decay_mult: 0
+  }
+  convolution_param {
+    num_output: 32 #25
+    pad: 1 # 1 for 3x3, 2 for 5x5
+    kernel_size: 3
+    stride: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+      value: 0
+    }
+  }
+}
+layer {
+  name: "rw_relu6/single_2"
+  type: "ReLU"
+  bottom: "rw_conv6/single_2"
+  top: "rw_conv6/single_2"
+}
+#### yet another scale
+layer {
+  name: "rw_conv6/single_3"
+  type: "Convolution"
+  bottom: "rw_conv6/pool"
+  top: "rw_conv6/single_3"
+  param {
+    lr_mult: 10
+  }
+  param {
+    lr_mult: 20
+	decay_mult: 0
+  }
+  convolution_param {
+    num_output: 20 #25
+    pad: 3
+    kernel_size: 7
+    stride: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+      value: 0
+    }
+  }
+}
+layer {
+  name: "rw_relu6/single_3"
+  type: "ReLU"
+  bottom: "rw_conv6/single_3"
+  top: "rw_conv6/single_3"
+}
+
+layer {
+  name: "concat_6"
+  type: "Concat"
+  top: "concat_6"
+  bottom: "rw_conv6/single"
+  bottom: "rw_conv6/single_2"
+  bottom: "rw_conv6/single_3"
+  concat_param {
+    axis: 1
+  }
+}
+####
+layer {
+  name: "rw_map/single"
+  type: "Convolution"
+  bottom: "concat_6"
+  top: "rw_map/single"
+  param {
+    lr_mult: 10
+  }
+  param {
+    lr_mult: 20
+	decay_mult: 0
+  }
+  convolution_param {
+    num_output: 1
+    pad: 0
+    kernel_size: 1
+    stride: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+      value: 0
+    }
+  }
+}
+
+layer {
+  name: "rw_relu6_map/single"
+  type: "ReLU"
+  bottom: "rw_map/single"
+  top: "rw_map/single"
+}
+
+layer {
+  name: "upsample"
+  type: "Deconvolution"
+  bottom: "rw_map/single"
+  top: "upsample"
+  convolution_param {
+    kernel_size: 4 stride: 2
+    num_output: 1 group: 1 # change to num of channel
+    pad: 1
+    weight_filler: { type: "bilinear" } bias_term: false
+  }
+  param { lr_mult: 0 decay_mult: 0 }
+}
+
+layer {
+  name: "spfilter7"
+  type: "Spfilter"
+  bottom: "vlad_softmax"
+  bottom: "upsample"
+  top: "spfilter7"
+}
+
+layer {
+  name: "vlad_core"
+  type: "Netvlad"
+  bottom: "spfilter7"
+  bottom: "vlad_preL2"
+  top: "vlad_core"
+  param {
+    name: "w_vladcore"
+    lr_mult: 1
+  }
+  netvlad_param {
+    cluster_num: 64
+    local_dim: 256
+    vlad_dim: 16384
+  }
+}
+layer {
+  name: "vlad_intra"
+  type: "Intranorm"
+  bottom: "vlad_core"
+  top: "vlad_intra"
+  intranorm_param {
+    cluster_num: 64
+  }
+}
+layer {
+  name: "vlad_postL2"
+  type: "Normalize"
+  bottom: "vlad_intra"
+  top: "vlad_postL2"
+}
+layer {
+  name: "loss"
+  type: "RankHardLoss"
+  loss_weight: 1
+  rank_param{
+    neg_num: 4
+    pair_size: 4
+    hard_ratio: 0.5
+    rand_ratio: 0.5
+    margin: 0.25
+  }
+  bottom: "vlad_postL2"
+  bottom: "gps_lat"
+  bottom: "gps_lon"
+}
+

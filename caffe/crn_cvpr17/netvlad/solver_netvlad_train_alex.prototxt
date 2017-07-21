@@ -1,0 +1,16 @@
+net: "crn_cvpr17/netvlad/train_val_netvlad_alex.prototxt"
+test_iter: 30
+test_interval: 1000
+base_lr: 0.0001
+lr_policy: "step"
+gamma: 0.25
+stepsize: 6000 
+display: 20
+max_iter: 30000
+momentum: 0.9
+weight_decay: 0.001
+snapshot: 2000
+snapshot_prefix: "crn_cvpr17/netvlad/snapshots/netvlad_alex"
+solver_mode: GPU
+device_id: 0
+

@@ -1,0 +1,110 @@
+COPYRIGHT AND PERMISSION NOTICE
+UNC Software “Learned Contextual Feature Reweighting for Image Geo-Localization”
+Copyright (C) 2017 The University of North Carolina at Chapel Hill
+All rights reserved.
+
+The University of North Carolina at Chapel Hill (“UNC”) and the developers (“Developers”) of Learned Contextual Feature Reweighting for Image Geo-Localization software (“Software”) give recipient (“Recipient”) and Recipient’s Institution (“Institution”) permission to use and copy the software in source and binary forms, with or without modification for non-commercial or evaluation purposes only provided that the conditions below are met. Recipients seeking commercial rights in the software should proceed as directed in (6) below.
+
+1)	All copies of Software in binary form and/or source code, related documentation and/or other materials provided with the Software must reproduce and retain the above copyright notice, this list of conditions and the following disclaimer.
+
+2)	Recipient and Institution shall not distribute Software to any third parties
+
+3)	Recipient may provide the Developers with feedback on the use of the Software in their research.  The Developers and UNC are permitted to use any information Recipient provides in making changes to the Software. All feedback, bug reports and technical questions shall be sent to: hyojin@cs.unc.edu
+
+4)	Recipient acknowledges that the Developers, UNC and its licensees may develop modifications to Software that may be substantially similar to Recipient’s modifications of Software, and that the Developers, UNC and its licensees shall not be constrained in any way by Recipient in UNC’s or its licensees’ use or management of such modifications. Recipient acknowledges the right of the Developers and UNC to prepare and publish modifications to Software that may be substantially similar or functionally equivalent to your modifications and improvements, and if Recipient or Institution obtains patent protection for any modification or improvement to Software, Recipient and Institution agree not to allege or enjoin infringement of their patent by the Developers, UNC or any of UNC’s licensees obtaining modifications or improvements to Software from the UNC or the Developers.
+
+5)	Recipient and Developer will acknowledge in their respective publications the contributions made to each other’s research involving or based on the Software. The current citations for Software are:
+
+Hyo Jin Kim, Enrique Dunn, and Jan-Michael Frahm. "Learned Contextual Feature Reweighting for Image Geo-Localization," Proc. of IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2017.
+
+Bibtex:
+
+@inproceedings{kim2017crn,
+    title={Learned Contextual Feature Reweighting for Image Geo-Localization},
+    author={Kim, Hyo Jin and Dunn, Enrique and  Frahm, Jan-Michael},
+    booktitle={CVPR},
+    year= {2017}
+}
+
+6)	Any party desiring a license to use the Software for commercial purposes shall contact UNC’s Office of Commercialization and Economic Development at 919-966-3929 or oced@unc.edu. Commercial recipients may use the Software as described above only for the purpose of evaluating the software with the intent of obtaining a commercial license and only for a single, limited period of up to thirty (30) days. For sample license terms, please see UNC’s expedited, online licensing site: http://oced.unc.edu/industry/#copyright
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS, CONTRIBUTORS, AND THE UNIVERSITY OF NORTH CAROLINA AT CHAPEL HILL "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER, CONTRIBUTORS OR THE UNIVERSITY OF NORTH CAROLINA AT CHAPEL HILL BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+•	Newly added Caffe layers in this software include
+-	NetVLAD layer
+-	SpatialFilter layer (“Spfilter” layer)
+-	Intra-normalization layer (“Intranorm” layer)
+
+
+************************************************************************
+
+THIRD-PARTY SOFTWARE NOTICES AND INFORMATION
+
+This project, “Learned Contextual Feature Reweighting for Image Geo-Localization”, incorporates material from the project(s) listed below (collectively, "Third Party Code"). The original copyright notice and license of such Third Party Code are set out below. This Third Party Code is licensed to you under their original license terms set forth below.
+
+
+1.	Caffe, (https://github.com/BVLC/caffe/)
+
+COPYRIGHT
+
+All contributions by the University of California:
+Copyright (c) 2014, 2015, The Regents of the University of California (Regents)
+All rights reserved.
+
+All other contributions:
+Copyright (c) 2014, 2015, the respective contributors
+All rights reserved.
+
+Caffe uses a shared copyright model: each contributor holds copyright
+over their contributions to Caffe. The project versioning records all
+such contribution and copyright details. If a contributor wants to
+further mark their specific copyright on a particular contribution,
+they should indicate their copyright solely in the commit message of
+the change when it is committed.
+
+The BSD 2-Clause License
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+
+1. Redistributions of source code must retain the above copyright notice,
+this list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright
+notice, this list of conditions and the following disclaimer in the
+documentation and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+2. Rank Hard Loss Layer
+Copyright (c) 2015 Xiaolong Wang (CMU), Abhinav Gupta (CMU)
+Project page: https://github.com/xiaolonw/caffe-video_triplet
+All rights reserved.
+
+
+3. Normalization Layer
+Copyright (c) 2015 Binbin Xu 
+Project page: http://freesouls.github.io/2015/08/30/caffe-implement-l2-normlization-layer/
+All rights reserved.
+
+
+4. Evaluation Package for San Francisco Landmark Dataset
+Copyright (c) 2015 David Chen (Stanford), Sam Tsai (Stanford), Bernd Girod (Standord)
+Project page: https://purl.stanford.edu/vn158kj2087
+All rights reserved.
+
+
+************END OF THIRD-PARTY SOFTWARE NOTICES AND INFORMATION**********
