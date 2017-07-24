@@ -20,7 +20,7 @@ If you use our codes or models in your research, please cite:
 # Training
 
 # Learning rate scheduling hacks 
-Learning rate scheduling is done based on the behavior of the training loss (babysitting). The authors did not use the scheduling as specified in the solver.prototxt, but whenever the training loss reached a plateau, learning rate was reduced by gamma (as specified in the solver.prototxt). 
+Learning rate scheduling is done through babysitting. The authors did not use the scheduling as specified in the solver.prototxt, but whenever the training loss reached a plateau, learning rate was reduced by gamma (as specified in the solver.prototxt). 
 
 # Evaluation
 
