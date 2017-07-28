@@ -25,8 +25,6 @@ If you use our codes or models in your research, please cite:
 
 # Evaluation
 
-# Deploying CRN to other applications
-Similar to other approaches on feature reweighting, it is encouraged to weigh a feature's contribution as in our work. If possible, avoid modifying the feature maps directly when the modified feature maps are directly fed to spatial filters (nxn conv filters, n > 1), which can cause unwanted artifacts. (However, in some literatures on attention-based CNNs, directly modifying feature maps also seem to work..)
 
 # Misc
 * Learning rate scheduling: Learning rate scheduling is done through babysitting. Whenever the training loss reached a plateau, learning rate was reduced by gamma (as specified in the solver.prototxt).
