@@ -21,3 +21,5 @@ If you use our codes or models in your research, please cite:
 
 # Evaluation
 
+# Others
+Learning rate scheduling: Learning rate scheduling is done through babysitting. Whenever the training loss reached a plateau, learning rate was reduced by gamma (as specified in the solver.prototxt).
