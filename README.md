@@ -19,24 +19,24 @@ If you use our codes or models in your research, please cite:
 # Dataset for San Francisco Benchmark
 1. Training queries
 
-1.1 Flickr Images
+   1.1 Flickr Images
 
-Flickr id's available at [sf_flickr.txt](https://github.com/hyojinie/crn/blob/master/sf_flickr.txt)
+   Flickr id's available at [sf_flickr.txt](https://github.com/hyojinie/crn/blob/master/sf_flickr.txt)
 
-Currently, original images are accessible by http://flickr.com/photo.gne?id=(Put Photo Id Here)
+   Currently, original images are accessible by http://flickr.com/photo.gne?id=(Put Photo Id Here)
 
-Please refer to copyrights of each images. We plan to provide scripts for downloading images later.
+   Please refer to copyrights of each images. We plan to provide scripts for downloading images later.
 
-1.2 Google Streetview Research Dataset
+   1.2 Google Streetview Research Dataset
 
-Available at [ICMLA'11 Challenge]http://www.icmla-conference.org/icmla11/challenge.htm
+   Available at [ICMLA'11 Challenge]http://www.icmla-conference.org/icmla11/challenge.htm
 
-Please use the dataset for the purposes of research only and Google don't allow any commercial use of the dataset. Let us know if you have problem downloading them. 
+   Please use the dataset for the purposes of research only and Google don't allow any commercial use of the dataset. Let us know if you    have problem downloading them. 
 
 2. Reference Dataset
 Original dataset by Chen et al. (2011): https://purl.stanford.edu/vn158kj2087
 
-ROI cropped versions used for training: Available on request. Please specify your name, affiliation, and purpose for the dataset to hyojin(at)cs.unc.edu.
+   ROI cropped versions used for training: Available on request. Please specify your name, affiliation, and purpose for the dataset to hyojin(at)cs.unc.edu.
 
 3. Test queries
 Available at https://purl.stanford.edu/vn158kj2087
@@ -69,19 +69,17 @@ Available at https://purl.stanford.edu/vn158kj2087
    * Adjust file paths before start training
 
 3. Run 
-
-   cd crn/caffe
-   
+```txt
+   cd crn/caffe   
    crn_cvpr17/rw_net/train_rw_alex.sh # for alexnet-based network
-   
    crn_cvpr17/rw_net/train_rw_vgg.sh # for vgg16-based network
+```
 
 3.1. Fine-tuning of NetVLAD on SF benchmark
-
+```txt
    crn_cvpr17/netvlad/train_netvlad_alex.sh # for alexnet-based network
-   
    crn_cvpr17/netvlad/train_netvlad_alex.sh # for vgg16-based network
-
+```
 # Pre-Trained Models
 We provide pre-trained models in [trained_models](https://github.com/hyojinie/crn/tree/master/trained%20_models)
 
@@ -89,16 +87,16 @@ We provide pre-trained models in [trained_models](https://github.com/hyojinie/cr
 Evaluation scripts available at [matlab_scripts](https://github.com/hyojinie/crn/tree/master/matlab_scripts)
 
 1. Evaluation of CRN+NetVLAD
-
+```txt
 run_eval_rw_netvlad_alexnet_fullres.m	
-
 run_eval_rw_netvlad_vgg_fullres.m
+```
 
 2. Evaluation of NetVLAD
-
+```txt
 run_eval_netvlad_alexnet_fullres.m
-
 run_eval_netvlad_vgg_fullres.m	
+```
 
 # Misc
 * Learning rate scheduling: Learning rate scheduling is done through babysitting. Whenever the training loss reached a plateau, learning rate was reduced by gamma (as specified in the solver.prototxt).
