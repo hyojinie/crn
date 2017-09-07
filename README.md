@@ -24,7 +24,9 @@ Original dataset by Chen et al. (2011): https://purl.stanford.edu/vn158kj2087
 
    1.1 Flickr Images
 
-   Flickr id's available at [sf_flickr.txt](https://github.com/hyojinie/crn/blob/master/sf_flickr.txt)
+   Flickr id's available at [sf_flickr.txt](https://github.com/hyojinie/crn/blob/master/sf_flickr.txt) 
+   
+   Each pair in the file consists of the saved image name and the corresponding Flickr id
 
    Currently, original images are accessible by http://flickr.com/photo.gne?id=(Put Photo Id Here)
 
