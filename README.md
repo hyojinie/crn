@@ -16,7 +16,10 @@ If you use our codes or models in your research, please cite:
 }
 ```
 
-# Dataset for San Francisco Benchmark
+# Dataset for San Francisco Benchmark 
+
+Original dataset by Chen et al. (2011): https://purl.stanford.edu/vn158kj2087
+
 1. Training queries
 
    1.1 Flickr Images
@@ -34,12 +37,14 @@ If you use our codes or models in your research, please cite:
    Please use the dataset for the purposes of research only and Google don't allow any commercial use of the dataset. Let us know if you    have problem downloading them. 
 
 2. Reference Dataset
-Original dataset by Chen et al. (2011): https://purl.stanford.edu/vn158kj2087
+
+   Original dataset by Chen et al. (2011): https://purl.stanford.edu/vn158kj2087
 
    ROI cropped versions used for training: Available on request. Please specify your name, affiliation, and purpose for the dataset to hyojin(at)cs.unc.edu.
 
 3. Test queries
-Available at https://purl.stanford.edu/vn158kj2087
+
+   Available at https://purl.stanford.edu/vn158kj2087
 
 
 # Training
