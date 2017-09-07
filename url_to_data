@@ -1,3 +1,13 @@
 https://www.dropbox.com/s/qv2qkzd4vx25wqm/data.zip?dl=0
 
-TODO: Add pre-processing for images, add flickr urls
+README:
+
+Contains following
+1. lists of triplets used for training, validation 
+   - training: all_sanfran_netvlad_trn_fr.txt
+   - validation: val_sanfran_netvlad_trn_fr.txt
+2. lists of images for feature extraction used for evaluation
+   - query: sanfran_q3_featext_fr.txt
+   - reference: sanfran_sv_featext_fr.txt
+
+The subfolder "download" is depreciated
