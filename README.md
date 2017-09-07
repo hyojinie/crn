@@ -34,7 +34,7 @@ Original dataset by Chen et al. (2011): https://purl.stanford.edu/vn158kj2087
 
    1.2 Google Streetview Research Dataset
 
-   Available at [ICMLA'11 Challenge]http://www.icmla-conference.org/icmla11/challenge.htm
+   Available at [ICMLA'11 Streetview Recognition Challenge](http://www.icmla-conference.org/icmla11/challenge.htm)
 
 2. Reference Dataset
 
