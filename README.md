@@ -36,8 +36,6 @@ Original dataset by Chen et al. (2011): https://purl.stanford.edu/vn158kj2087
 
    Available at [ICMLA'11 Challenge]http://www.icmla-conference.org/icmla11/challenge.htm
 
-   Please use the dataset for the purposes of research only and Google don't allow any commercial use of the dataset. Let us know if you    have problem downloading them. 
-
 2. Reference Dataset
 
    Original dataset by Chen et al. (2011): https://purl.stanford.edu/vn158kj2087
