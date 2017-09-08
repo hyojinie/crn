@@ -36,11 +36,9 @@ Original dataset by Chen et al. (2011): https://purl.stanford.edu/vn158kj2087
 
       Available at [ICMLA'11 Streetview Recognition Challenge](http://www.icmla-conference.org/icmla11/challenge.htm)
 
-2. Reference images
+2. Reference images 
 
-   Original dataset by Chen et al. (2011): https://purl.stanford.edu/vn158kj2087
-
-   ROI cropped versions used for training: Available on request. Please send your name and affiliation to hyojin(at)cs.unc.edu. 
+   Available at https://purl.stanford.edu/vn158kj2087
 
 3. Test query images
 
