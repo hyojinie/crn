@@ -51,7 +51,7 @@ Original dataset by Chen et al. (2011): https://purl.stanford.edu/vn158kj2087
 
 0. Install the custom Caffe & PyCaffe (Includes custom layers built for this method)
 
-1. Download dataset and perform pre-processing (cropping of training queries to three square patches: {left, center, right} or {top, center, bottom} based on the aspect ratio of the original image. Each patches should be named as [OriginalName]_aux1.jpg, [OriginalName].jpg, and [OriginalName]_aux2.jpg, respectively.) (Todo: provide script)
+1. Download dataset and perform pre-processing (cropping of training queries to three square patches: {left, center, right} or {top, center, bottom} based on the aspect ratio of the original image. The patches should be named as [OriginalName]_aux1.jpg, [OriginalName].jpg, and [OriginalName]_aux2.jpg, respectively.) (Todo: provide script)
 
 2. Image data lists are available at https://www.dropbox.com/s/qv2qkzd4vx25wqm/data.zip?dl=0 
 
