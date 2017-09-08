@@ -40,7 +40,7 @@ Original dataset by Chen et al. (2011): https://purl.stanford.edu/vn158kj2087
 
    Original dataset by Chen et al. (2011): https://purl.stanford.edu/vn158kj2087
 
-   ROI cropped versions used for training: Available on request. Please send your name and affiliation for the dataset to hyojin(at)cs.unc.edu. 
+   ROI cropped versions used for training: Available on request. Please send your name and affiliation to hyojin(at)cs.unc.edu. 
 
 3. Test queries
 
