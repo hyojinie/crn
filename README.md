@@ -20,7 +20,7 @@ If you use our codes or models in your research, please cite:
 
 Original dataset by Chen et al. (2011): https://purl.stanford.edu/vn158kj2087
 
-1. Training queries
+1. Training query images
 
    1.1 Flickr Images
 
@@ -36,20 +36,20 @@ Original dataset by Chen et al. (2011): https://purl.stanford.edu/vn158kj2087
 
       Available at [ICMLA'11 Streetview Recognition Challenge](http://www.icmla-conference.org/icmla11/challenge.htm)
 
-2. Reference Dataset
+2. Reference images
 
    Original dataset by Chen et al. (2011): https://purl.stanford.edu/vn158kj2087
 
    ROI cropped versions used for training: Available on request. Please send your name and affiliation to hyojin(at)cs.unc.edu. 
 
-3. Test queries
+3. Test query images
 
    Available at https://purl.stanford.edu/vn158kj2087
 
 
 # Training
 
-0. Install the custom Caffe & pycaffe (Includes custom layers built for this method)
+0. Install the custom Caffe & PyCaffe (Includes custom layers built for this method)
 
 1. Download dataset and perform pre-processing (cropping of training queries to three square patches: {left, center, right} or {top, center, bottom} based on the aspect ratio of the original image. Each patches should be named as [OriginalName]_aux1.jpg, [OriginalName].jpg, and [OriginalName]_aux2.jpg, respectively.) (Todo: provide script)
 
