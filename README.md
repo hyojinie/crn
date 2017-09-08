@@ -40,7 +40,7 @@ Original dataset by Chen et al. (2011): https://purl.stanford.edu/vn158kj2087
 
    Original dataset by Chen et al. (2011): https://purl.stanford.edu/vn158kj2087
 
-   ROI cropped versions used for training: Available on request. Please specify your name, affiliation, and purpose for the dataset to hyojin(at)cs.unc.edu.
+   ROI cropped versions used for training: Available on request. Please send your name and affiliation for the dataset to hyojin(at)cs.unc.edu. 
 
 3. Test queries
 
@@ -69,9 +69,9 @@ Original dataset by Chen et al. (2011): https://purl.stanford.edu/vn158kj2087
       
       - reference: sanfran_sv_featext_fr.txt
    
-   * Note: the subfolder "download" is depreciated
+   * Note: The subfolder "download" is depreciated
    
-   * Adjust file paths before start training
+   * Adjust file paths before starting training
 
 3. Run 
 ```txt
