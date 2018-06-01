@@ -104,3 +104,4 @@ run_eval_netvlad_vgg_fullres.m
 # Misc
 * Learning rate scheduling: Learning rate scheduling is done through babysitting. Whenever the training loss reached a plateau, learning rate was reduced by gamma (as specified in the solver.prototxt).
 
+* Current version was tested on Ubuntu14.04 with CUDA 7. For Ubuntu16.04 with CUDA 8, please follow the instructions at https://github.com/BVLC/caffe/wiki/Ubuntu-16.04-or-15.10-Installation-Guide
