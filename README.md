@@ -47,6 +47,11 @@ Original dataset by Chen et al. (2011): https://purl.stanford.edu/vn158kj2087
 
 # Training
 
+** Important Details for Training on New Datasets (described in the paper) **
+Step 1> Train the base representation (e.g. NetVLAD) first.
+Step 2> Jointly train CRN + the base representation.
+In this way, CRN is trained in a more stable manner + yields better performance.
+
 0. Install the custom Caffe & PyCaffe (Includes custom layers built for this method)
 
 1. Download dataset and perform pre-processing on query images (cropping of training queries to three square patches: {left, center, right} or {top, center, bottom} based on the aspect ratio of the original image. The patches should be named as [OriginalName]_aux1.jpg, [OriginalName].jpg, and [OriginalName]_aux2.jpg, respectively.) (Todo: provide script)
