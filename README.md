@@ -47,10 +47,15 @@ Original dataset by Chen et al. (2011): https://purl.stanford.edu/vn158kj2087
 
 # Training
 
-** Important Details for Training on New Datasets (described in the paper) **
+*** Important Details for Training on New Datasets (described in the paper) ***
+
 Step 1> Train the base representation (e.g. NetVLAD) first.
+
 Step 2> Jointly train CRN + the base representation.
-In this way, CRN is trained in a more stable manner + yields better performance.
+
+In this way, the CRN is trained in a more stable manner + yields better performance.
+
+
 
 0. Install the custom Caffe & PyCaffe (Includes custom layers built for this method)
 
